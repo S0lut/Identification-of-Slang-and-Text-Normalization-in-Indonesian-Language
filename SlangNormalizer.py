@@ -285,7 +285,7 @@ def calculate_metrics(predicted_slang_list, true_slang_str, predicted_norm, true
 st.markdown("""
 <div class="main-header">
     <h1>HYBRID SLANG NORMALIZER</h1> 
-    <h4>Normalisasi Teks Gaul Indonesia dengan model IndoBERT & Kamus Eksternal</h4>
+    <h5>Normalisasi Teks Slang pada bahasa Indonesia secara instan dengan model IndoBERT & kamus eksternal</h5>
 </div>
 """, unsafe_allow_html=True)
 
@@ -544,4 +544,5 @@ with tab2:
         with c2:
             out = BytesIO()
             with pd.ExcelWriter(out, engine='openpyxl') as w: res_df.to_excel(w, index=False)
+
             st.download_button("📊 Download Excel", out.getvalue(), "result.xlsx", use_container_width=True)
